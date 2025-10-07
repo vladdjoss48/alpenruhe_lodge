@@ -1,0 +1,227 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #008CBA, #005f75);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+section {
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery img {
+    width: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* Formulaire */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f75;
+}
+
+/* Image agrandie */
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.fullscreen img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+}
+
+/* ---------------------
+   RESPONSIVE DESIGN
+--------------------- */
+
+/* Tablettes et petits écrans (max 768px) */
+@media screen and (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        display: block;
+        padding: 12px 0;
+    }
+
+    header {
+        padding: 30px 10px;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+
+    input, textarea, button {
+        font-size: 16px;
+    }
+}
+
+/* Smartphones (max 480px) */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .gallery img {
+        width: 90%;
+    }
+
+    section {
+        padding: 15px 10px;
+    }
+}
+
+/* ---------------------
+   GALERIE D'IMAGES MODERNE
+--------------------- */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Effet d’image en plein écran (lightbox) */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox:after {
+    content: "×";
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
